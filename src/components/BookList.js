@@ -19,22 +19,22 @@ const BookList = () => {
   ];
   return (
     <>
-    <div>
-      <ul>
-        {ListItem.map((books) => (
-          <li
-            key={books.id}
-          >
-            {books.title}
-          </li>
+      <div>
+        <ul>
+          {ListItem.map((books) => (
+            <li
+              key={books.id}
+            >
+              {books.title}
+            </li>
 
-        ))}
+          ))}
 
-      </ul>
-      <ul />
-    </div>
-          <InputItem />
-          </>
+        </ul>
+        <ul />
+      </div>
+      <InputItem />
+    </>
   );
 };
 
