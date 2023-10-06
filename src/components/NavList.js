@@ -2,8 +2,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import BookList from './BookList';
 import Categories from './Categories';
 
-const NavList = () => {
-    return (
+const NavList = () => (
   <div>
     <nav>
       <p>Bookstore CMS</p>
@@ -19,7 +18,6 @@ const NavList = () => {
       <Route path="/Categories" element={<Categories />} />
     </Routes>
   </div>
-    )
-};
+);
 
 export default NavList;
