@@ -1,14 +1,18 @@
 import './App.css';
-import InputItem from './components/Form';
 import BookList from './components/BookList';
 import NavList from './components/NavList';
+import { Route, Routes } from 'react-router-dom';
+import Categories from './components/Categories';
+
 
 function App() {
   return (
     <div className="App">
       <NavList />
-      <InputItem />
-      <BookList />
+      <Routes>
+      <Route path="/"  element={<BookList />} />
+      <Route path="/Categories" element={<Categories />} />
+    </Routes>
     </div>
   );
 }

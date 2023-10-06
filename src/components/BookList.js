@@ -1,3 +1,5 @@
+import InputItem from './Form';
+
 const BookList = () => {
   const ListItem = [
     {
@@ -16,6 +18,7 @@ const BookList = () => {
     },
   ];
   return (
+    <>
     <div>
       <ul>
         {ListItem.map((books) => (
@@ -30,6 +33,8 @@ const BookList = () => {
       </ul>
       <ul />
     </div>
+          <InputItem />
+          </>
   );
 };
 
