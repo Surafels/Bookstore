@@ -12,7 +12,6 @@ const BookList = () => {
             <li
               key={book.item_id}
             >
-              {book.category}
               {book.title} 
                {book.author}
             </li>
