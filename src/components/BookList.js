@@ -1,31 +1,20 @@
+import { useSelector } from 'react-redux';
 import InputItem from './Form';
 
 const BookList = () => {
-  const ListItem = [
-    {
-      id: 1,
-      title: 'The Hunger Games',
-      catagory: 'Action',
-    },
-    {
-      id: 1,
-      title: 'Dune',
-      catagory: 'Science Fiction',
-    }, {
-      id: 3,
-      title: 'Capital in the Twenty First Century',
-      catagory: '',
-    },
-  ];
+  const books  = useSelector((state) => state.books.books);
+
   return (
     <>
       <div>
         <ul>
-          {ListItem.map((books) => (
+          {books.map((book) => (
             <li
-              key={books.id}
+              key={book.item_id}
             >
-              {books.title}
+              {book.category}
+              {book.title} 
+               {book.author}
             </li>
 
           ))}
