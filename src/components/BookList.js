@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import InputItem from './Form';
 
 const BookList = () => {
-  const books  = useSelector((state) => state.books.books);
+  const books = useSelector((state) => state.books.books);
 
   return (
     <>
@@ -12,8 +12,9 @@ const BookList = () => {
             <li
               key={book.item_id}
             >
-              {book.title} 
-               {book.author}
+              {book.category}
+              {book.title}
+              {book.author}
             </li>
 
           ))}
