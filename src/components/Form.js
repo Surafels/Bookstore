@@ -1,4 +1,4 @@
-import AddBtn from './AddRemoveBtn';
+import AddBtn from './AddBtn';
 
 const InputItem = () => (
   <div>

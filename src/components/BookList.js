@@ -1,9 +1,14 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import InputItem from './Form';
+import { removeBook } from '../Redux/books/booksSlice';
 
 const BookList = () => {
   const books = useSelector((state) => state.books.books);
+  const dispatch = useDispatch();
 
+  const handleRemove = (id) => {
+    dispatch(removeBook(id));
+  };
   return (
     <>
       <div>
@@ -15,6 +20,11 @@ const BookList = () => {
               {book.category}
               {book.title}
               {book.author}
+
+              <li key={book.id}>
+                <button type="button" onClick={() => handleRemove(book.id)}>Remove</button>
+              </li>
+
             </li>
 
           ))}

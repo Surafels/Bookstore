@@ -1,13 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook, removeBook } from '../Redux/books/booksSlice';
+import { addBook } from '../Redux/books/booksSlice';
 
 const AddBtn = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.books.books);
   const handleSubmit = (e) => {
     e.preventDefault();
     const newBook = {
@@ -18,10 +17,6 @@ const AddBtn = () => {
     dispatch(addBook(newBook));
     setTitle(' ');
     setAuthor(' ');
-  };
-
-  const handleRemove = (id) => {
-    dispatch(removeBook(id));
   };
 
   return (
@@ -43,14 +38,7 @@ const AddBtn = () => {
           Add Book
         </button>
       </form>
-      <ul>
-        {books.map((book) => (
-          <li key={book.id}>
-            <button type="button" onClick={() => handleRemove(book.id)}>Remove</button>
-          </li>
 
-        ))}
-      </ul>
     </div>
   );
 };
