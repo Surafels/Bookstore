@@ -80,8 +80,8 @@ const bookSlice = createSlice({
       })
       .addCase(removeBook.fulfilled, (state, action) => {
         state.isLoading = false;
-        console.log(state.books.books);
-        state.books = state.books.books.filter((book) => book.id !== action.payload);
+        const bookId = action.payload;
+        state.books = state.books.filter((book) => book.id !== bookId);
       })
       .addCase(removeBook.rejected, (state, action) => {
         state.isLoading = false;
