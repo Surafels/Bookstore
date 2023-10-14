@@ -39,7 +39,7 @@ const BookList = () => {
 
                   </div>
                 </div>
-                {/* <div className="progressBar" /> */}
+                
                 <div className="progress-container">
                   <div className="circular-progress-container">
                     <div className="circular-progress" />
