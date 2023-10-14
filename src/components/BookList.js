@@ -1,36 +1,31 @@
 import { useSelector, useDispatch } from 'react-redux';
-import InputItem from './Form';
 import { removeBook } from '../Redux/books/booksSlice';
+import InputItem from './Form';
 
 const BookList = () => {
-  const books = useSelector((state) => state.books.books);
+  const booksObject = useSelector((state) => state.books.books);
+  const books = Object.values(booksObject);
   const dispatch = useDispatch();
 
   const handleRemove = (id) => {
     dispatch(removeBook(id));
   };
+
   return (
     <>
       <div>
         <ul>
           {books.map((book) => (
-            <li
-              key={book.item_id}
-            >
+            <li key={book.id}>
               {book.category}
               {book.title}
               {book.author}
-
-              <li key={book.id}>
-                <button type="button" onClick={() => handleRemove(book.id)}>Remove</button>
-              </li>
-
+              <button type="button" onClick={() => handleRemove(book.id)}>
+                Remove
+              </button>
             </li>
-
           ))}
-
         </ul>
-        <ul />
       </div>
       <InputItem />
     </>
