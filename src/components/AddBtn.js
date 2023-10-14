@@ -33,6 +33,7 @@ const AddBtn = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          className="book-title"
           placeholder="Book title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -49,7 +50,7 @@ const AddBtn = () => {
           <option value="faction3">noble2</option>
         </select>
 
-        <button type="submit">
+        <button className="add-btn" type="submit">
           Add Book
         </button>
       </form>
