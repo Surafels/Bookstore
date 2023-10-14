@@ -8,20 +8,16 @@ const initialState = {
   error: false,
 };
 
-// Async thunk for fetching books from the backend
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   const response = await axios.get(apiUrl);
-  console.log(response.data, 'data');
   return response.data;
 });
 
-// Async thunk for adding a book
 export const addBook = createAsyncThunk('books/addBook', async (book) => {
   const response = await axios.post(apiUrl, book);
   return { ...book, id: response.data.item_id };
 });
 
-// Async thunk for removing a book
 export const removeBook = createAsyncThunk('books/removeBook', async (bookId) => {
   await axios.delete(`${apiUrl}/${bookId}`);
   return bookId;
@@ -33,7 +29,6 @@ const bookSlice = createSlice({
   reducers: {},
 
   extraReducers: (builder) => {
-    // Fetch books reducers
     builder
       .addCase(fetchBooks.pending, (state) => {
         state.isLoading = true;
@@ -55,7 +50,6 @@ const bookSlice = createSlice({
         state.error = action.error.message;
       });
 
-    // Add book reducer
     builder
       .addCase(addBook.pending, (state) => {
         state.isLoading = true;
@@ -73,7 +67,6 @@ const bookSlice = createSlice({
         state.error = action.error.message;
       });
 
-    // Remove book reducer
     builder
       .addCase(removeBook.pending, (state) => {
         state.isLoading = true;

@@ -6,6 +6,7 @@ import { addBook, fetchBooks } from '../Redux/books/booksSlice';
 const AddBtn = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
   const dispatch = useDispatch();
   const booksObject = useSelector((state) => state.books.books);
   const books = Object.values(booksObject);
@@ -20,7 +21,7 @@ const AddBtn = () => {
       item_id: uuidv4(),
       title,
       author,
-       category: 'fiction',
+      category,
     };
     dispatch(addBook(newBook));
     setTitle('');
@@ -42,16 +43,19 @@ const AddBtn = () => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
+        <select onChange={(e) => setCategory(e.target.value)}>
+          <option value="fiction">fiction</option>
+          <option value="fiction1">noble</option>
+          <option value="faction3">noble2</option>
+        </select>
+
         <button type="submit">
           Add Book
         </button>
       </form>
 
       {books.map((book) => (
-        <div key={book.id}>
-          <h3>{book.title}</h3>
-          <p>{book.author}</p>
-        </div>
+        <div key={book.id} />
       ))}
     </div>
   );
