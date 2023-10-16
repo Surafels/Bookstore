@@ -33,7 +33,7 @@ const AddBtn = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          className="book-title"
+          className="Input-book-title"
           placeholder="Book title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -45,9 +45,9 @@ const AddBtn = () => {
           onChange={(e) => setAuthor(e.target.value)}
         />
         <select onChange={(e) => setCategory(e.target.value)}>
-          <option value="fiction">fiction</option>
-          <option value="fiction1">noble</option>
-          <option value="faction3">noble2</option>
+          <option value="Action">Action</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Noble">Noble</option>
         </select>
 
         <button className="add-btn" type="submit">

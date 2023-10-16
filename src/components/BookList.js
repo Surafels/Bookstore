@@ -66,8 +66,9 @@ const BookList = () => {
             ))}
           </ul>
         </div>
+        <InputItem />
       </div>
-      <InputItem />
+
     </>
   );
 };
