@@ -24,6 +24,9 @@ nav {
   opacity: 1;
   color: #121212;
   text-decoration: none;
+  font-family: "Montserrat",sans-serif;
+  font-size: .813rem;
+  letter-spacing: 1.9px;
 }
 
 .category-link {
@@ -43,6 +46,7 @@ nav {
   display: flex;
   flex-grow: 1;
   grid-gap: 40px;
+  align-items: center;
   gap: 40px;
   list-style: none;
   text-decoration: none;
@@ -78,6 +82,7 @@ nav {
 .book-title {
   font-weight: 700;
   color: #121212;
+
 }
 
 .book-title {
@@ -264,4 +269,12 @@ form {
   border-radius: 50%;
   border: 1px solid #e8e8e8;
   background-color: #fff;
+}
+
+svg:not(:root).svg-inline--fa,
+svg:not(:host).svg-inline--fa {
+  display: flex;
+  align-self: center;
+  margin: 10px auto;
+  color: #0290ff;
 }

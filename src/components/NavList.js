@@ -7,18 +7,18 @@ const NavList = () => (
     <nav>
       <p className="nav-head">Bookstore CMS</p>
       <ul className="nav-list">
-        <li className="book-link">
-          <Link to="/">Books</Link>
+        <li>
+          <Link to="/" className="book-link">BOOKS</Link>
         </li>
-        <li className="category-link">
-          <Link to="/Categories">Categories</Link>
-        </li>
-        <li className="person-link">
-          <Link to="/Profile">
-            <FontAwesomeIcon icon={faUser} />
-          </Link>
+        <li>
+          <Link to="/Categories" className="category-link">CATEGORIES</Link>
         </li>
       </ul>
+      <button type="button" className="person-link">
+        <Link to="/Profile">
+          <FontAwesomeIcon icon={faUser} />
+        </Link>
+      </button>
     </nav>
   </div>
 );
