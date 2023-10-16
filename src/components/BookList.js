@@ -65,8 +65,9 @@ const BookList = () => {
               </li>
             ))}
           </ul>
+          <InputItem />
         </div>
-        <InputItem />
+
       </div>
 
     </>
