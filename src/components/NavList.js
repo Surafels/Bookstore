@@ -1,16 +1,24 @@
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 const NavList = () => (
-  <div>
+  <div className="nav-bar">
     <nav>
-      <p>Bookstore CMS</p>
-      <ul>
+      <p className="nav-head">Bookstore CMS</p>
+      <ul className="nav-list">
         <li>
-
-          <Link to="/">Books</Link>
+          <Link to="/" className="book-link">BOOKS</Link>
         </li>
-        <Link to="/Categories">Categories </Link>
+        <li>
+          <Link to="/Categories" className="category-link">CATEGORIES</Link>
+        </li>
       </ul>
+      <button type="button" className="person-link">
+        <Link to="/Profile">
+          <FontAwesomeIcon icon={faUser} />
+        </Link>
+      </button>
     </nav>
   </div>
 );
